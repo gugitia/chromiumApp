@@ -1,0 +1,40 @@
+.login-staff {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  background-color: brown;
+  height: 400px;
+  margin-top: 70px;
+  border-radius: 30px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.login-staff h2 {
+  text-align: center;
+}
+
+.login-staff label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.login-staff input {
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.login-staff button {
+  margin-top: 30px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+}
+
+.login-staff button:hover {
+  background-color: rgb(247, 181, 177);
+}

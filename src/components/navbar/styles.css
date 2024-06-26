@@ -1,0 +1,28 @@
+.navbar-container {
+  background-color: rgb(138, 15, 87);
+  width: 500px;
+  height: 500px;
+  margin: -8px;
+  margin-top: -16px;
+}
+.navbar-list ul {
+  list-style: none;
+  margin-top: 16px;
+  padding-top: 20px;
+}
+
+.navbar-list li {
+  text-align: right;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-bottom: solid black 2px;
+  color: aliceblue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.navbar-list li:hover {
+  background-color: rgb(97, 1, 57);
+  border-radius: 8px;
+  padding: 20px;
+}
