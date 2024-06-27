@@ -19,6 +19,7 @@
 
 .manager-menu button {
   background-color: rgb(235, 93, 58);
+  color: aliceblue;
   width: 200px;
   margin-left: 100px;
   border-radius: 8px;

@@ -1,4 +1,12 @@
 .staff-table th,
 td {
   border-bottom: 1px solid #ddd;
+  padding: 5px;
+}
+
+.staff-table {
+  background-color: rgb(255, 157, 127);
+  padding: 20px;
+  border-radius: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

@@ -10,7 +10,9 @@ export default function Navbar() {
           <li>Monte seu Kit !</li>
           <li>Nossos Kits</li>
           <li>Personalizados</li>
-          <li>Loja</li>
+          <Link to="/loja">
+            <li>Loja</li>
+          </Link>
         </ul>
       </section>
     </div>

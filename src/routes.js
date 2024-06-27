@@ -6,6 +6,7 @@ import Logon from "./pages/login-user";
 import Register from "./pages/register-user";
 import LogonStaff from "./pages/login-staff";
 import StaffManager from "./pages/staff-manager";
+import Store from "./pages/loja";
 
 const Rotas = () => {
   return (
@@ -15,6 +16,7 @@ const Rotas = () => {
       <Route path="/registro" element={<Register />} />
       <Route path="/staff-login" element={<LogonStaff />} />
       <Route path="/adm" element={<StaffManager />} />
+      <Route path="/loja" element={<Store />} />
     </Routes>
   );
 };

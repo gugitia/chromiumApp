@@ -1,5 +1,5 @@
 .navbar-container {
-  background-color: rgb(138, 15, 87);
+  background-color: rgba(138, 15, 87, 0.7);
   width: 500px;
   height: 500px;
   margin: -8px;
@@ -25,4 +25,8 @@
   background-color: rgb(97, 1, 57);
   border-radius: 8px;
   padding: 20px;
+}
+
+a {
+  text-decoration: none;
 }
