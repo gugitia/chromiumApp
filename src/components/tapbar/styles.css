@@ -53,3 +53,11 @@ h3 {
 .perfil {
   size: 16px;
 }
+
+.tapbar-profile {
+  position: absolute;
+  right: 93px;
+  top: 73px;
+  font-size: 16px;
+  color: aliceblue;
+}

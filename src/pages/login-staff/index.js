@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import api from "../../services/api";
 import Tapbar from "../../components/tapbar";
@@ -6,6 +7,7 @@ import Tapbar from "../../components/tapbar";
 export default function LoginStaff() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -14,6 +16,7 @@ export default function LoginStaff() {
       localStorage.setItem("email", email);
       console.log(response);
       alert("login feito com sucesso");
+      navigate("/adm");
     } catch (err) {
       alert("falha de login");
     }

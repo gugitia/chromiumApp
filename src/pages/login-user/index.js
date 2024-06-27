@@ -15,7 +15,7 @@ export default function LoginUser() {
     e.preventDefault();
     try {
       const response = await api.post("/login/user", { email, senha });
-      localStorage.setItem("email", email);
+      localStorage.setItem("usuario", response.data.usuario);
       console.log(response);
       alert("login feito com sucesso");
       navigate("/");

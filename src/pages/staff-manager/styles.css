@@ -1,0 +1,33 @@
+.manager-menu ul {
+  list-style: none;
+  display: inline-flex;
+  margin-left: 100px;
+  margin-top: 80px;
+}
+
+.manager-menu li {
+  margin-right: 200px;
+  padding: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.manager-menu button:hover {
+  background-color: rgb(235, 130, 104);
+}
+
+.manager-menu button {
+  background-color: rgb(235, 93, 58);
+  width: 200px;
+  margin-left: 100px;
+  border-radius: 8px;
+  border: none;
+}
+
+.manager-component {
+  margin: 0 auto;
+  width: 800px;
+
+  text-align: center;
+}
