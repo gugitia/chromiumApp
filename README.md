@@ -1,6 +1,33 @@
+# Attention
+The project is on his first sprint,  the mvp is no ready yet.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app was made using JS React technology.
+It is the front end of the Chromium Store project and works with the ChromiumApi Project (https://github.com/gugitia/chromiumAPI)
+
+# How it works
+
+We have two user types, the user and the staff, the user can sign up and log in and is only able to see the the store pages ( "/loja" and "/" menu ) and the staff can only see the pages ("/adm", "/staff-login")
+
+#### Adm
+
+/adm is the component ./pages/staff-manager and renders the components bellow with three buttons that toggle one visible and disable all the others,
+each component activates a function that performs a query in the database MongoDB to get all infos from the colections.
+
+import ProductsStaff from "../../components/staff-products";
+
+import UsersStaff from "../../components/staff-users";
+
+import OrderStaff from "../../components/staff-orders";
+
+
+#### User
+
+The main page is the menu "/", it will be te first page to show up and the next after a login or sign up
+The user com login at the "/login" endPoint and sign up at "/registro"
+From the menu, the user can go to the store at ("/loja") to see the available products on a table 3xN mapped by the products ids
 
 ## Available Scripts
 
