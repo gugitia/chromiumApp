@@ -1,5 +1,5 @@
 # Attention
-The project is on his first sprint,  the mvp is no ready yet.
+The project is on his first sprint,  the mvp is not ready yet.
 
 # Getting Started with Create React App
 
