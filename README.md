@@ -5,11 +5,14 @@ The project is on his first sprint,  the mvp is not ready yet.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The app was made using JS React technology.
-It is the front end of the Chromium Store project and works with the ChromiumApi Project (https://github.com/gugitia/chromiumAPI)
+It is the front end of the Chromium Store project and works with the ChromiumApi Project (https://github.com/gugitia/chromiumAPI).
 
 # How it works
 
-We have two user types, the user and the staff, the user can sign up and log in and is only able to see the the store pages ( "/loja" and "/" menu ) and the staff can only see the pages ("/adm", "/staff-login")
+We have two user types, the user and the staff, the user can sign up and log in and is only able to see the the store pages ("/registro", "/login", "/loja", "/" menu ) and the staff can only see the pages ("/adm", "/staff-login").
+
+There is a tapbar on all pages that is not functional yet.
+The navbar on the "/" is intended to be a hidden menu and be on other pages.
 
 #### Adm
 
@@ -25,9 +28,9 @@ import OrderStaff from "../../components/staff-orders";
 
 #### User
 
-The main page is the menu "/", it will be te first page to show up and the next after a login or sign up
-The user com login at the "/login" endPoint and sign up at "/registro"
-From the menu, the user can go to the store at ("/loja") to see the available products on a table 3xN mapped by the products ids
+The main page is the menu "/", it will be te first page to show up and the next after a login or sign up.
+The user com login at the "/login" endPoint and sign up at "/registro".
+From the menu, the user can go to the store at ("/loja") to see the available products on a table 3xN mapped by the products ids.
 
 ## Available Scripts
 
