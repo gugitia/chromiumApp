@@ -35,7 +35,6 @@ export default function LoginUser() {
 
   return (
     <div className="manager-container">
-      <Tapbar />
       <div className="manager-menu">
         <ul>
           <button onClick={toggleProductsVisible}>

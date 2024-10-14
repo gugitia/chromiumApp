@@ -1,27 +1,69 @@
 .tapbar-container {
   width: 1296px;
-  height: 130px;
+  height: 120px;
   background-color: brown;
   margin: -8px;
   margin-top: -20px;
+  position: fixed;
+  z-index: 10;
+}
+
+@media (max-width: 1250px) {
+  .tapbar-container {
+    height: 180px;
+  }
 }
 
 h3 {
   position: absolute;
-  top: 0px;
+  top: 15px;
   left: 160px;
   font-size: 32px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: aliceblue;
+  z-index: 20;
 }
 
 .tapbar-buttons {
   float: right;
-  margin-right: 100px;
-  margin-top: 40px;
+  margin-right: 5vw;
+  margin-top: 30px;
+  position: relative;
 }
 
+@media (max-width: 1250px) {
+  .tapbar-buttons {
+    float: none; /* Centraliza o conteúdo em telas menores */
+    margin-right: 0;
+    top: 10px;
+    text-align: center; /* Centraliza o texto */
+  }
+}
+@media (max-width: 800px) {
+  .tapbar-container h3 {
+    float: left;
+  }
+  .tapbar-buttons {
+    top: 5px;
+    right: 150px;
+    padding: 10px;
+    width: 100%; /* Faz o conteúdo ocupar toda a largura */
+    text-align: center; /* Centraliza o texto */
+  }
+}
+
+@media (max-width: 650px) {
+  .tapbar-container h3 {
+    margin-left: -150px;
+  }
+  .tapbar-buttons {
+    left: -370px;
+  }
+  .tapbar-container {
+    height: 150px;
+  }
+}
 .tapbar-buttons button {
   margin-left: 20px;
   height: 60px;
@@ -60,4 +102,8 @@ h3 {
   top: 73px;
   font-size: 16px;
   color: aliceblue;
+}
+
+.carrinho {
+  position: relative;
 }

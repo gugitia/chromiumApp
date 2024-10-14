@@ -7,12 +7,13 @@ export default function Navbar() {
     <div className="navbar-container">
       <section className="navbar-list">
         <ul>
-          <li>Monte seu Kit !</li>
-          <li>Nossos Kits</li>
-          <li>Personalizados</li>
           <Link to="/loja">
             <li>Loja</li>
           </Link>
+          <li>Monte seu Kit !</li>
+          <li>Nossos Kits</li>
+          <li>Miniaturas Personalizados</li>
+          <li>Sobre Nós</li>
         </ul>
       </section>
     </div>

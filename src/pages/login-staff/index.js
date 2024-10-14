@@ -24,7 +24,6 @@ export default function LoginStaff() {
 
   return (
     <div className="login-staff-container">
-      <Tapbar />
       <div className="login-staff-forms">
         <form className="login-staff" onSubmit={handleLogin}>
           <h2>Login Staff</h2>

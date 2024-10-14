@@ -1,14 +1,22 @@
+/* Estilos gerais */
 .grid-container {
   padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
 }
 
+.loja-container {
+  margin-top: 0px;
+}
+
+/* Grid Responsivo */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 imagens por linha */
   gap: 20px;
-  width: 800px;
-  margin-left: 250px;
-  margin-top: 50px;
+  width: 100%; /* Ajusta o grid para caber na tela */
+  margin: 0 auto; /* Centraliza o grid */
+  margin-top: 120px;
 }
 
 .grid-item {
@@ -16,6 +24,28 @@
   justify-content: center;
 }
 
+/* Media query para telas menores */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 imagens por linha em telas menores */
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* 1 imagem por linha em telas muito pequenas */
+    width: 100%;
+  }
+}
+
+/* Cartão de produto */
 .card {
   width: 100%;
   height: 340px;
@@ -25,19 +55,30 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.cart-card {
+  z-index: 1;
+  background-color: rgb(252, 37, 37);
+  color: aliceblue;
+  border-radius: 8px;
+  padding: 5px;
+  border: none;
+  position: relative;
+  left: 150px;
+  top: -60px;
+  width: 80px;
+  font-size: 20px;
+}
+.cart-card:hover {
+  background-color: brown;
+}
+
 .card-img-top {
   width: 100%;
-  height: auto;
+  height: 240px;
 }
 
 .card-body {
   padding: 16px;
-}
-
-.card-text-price {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 8px;
 }
 
 .card-title {
@@ -55,7 +96,114 @@
   text-align: center;
 }
 
-img {
-  height: 150px;
-  width: 200px;
+/* Produto Detalhado */
+.produto-detalhado {
+  background-color: brown;
+  color: aliceblue;
+  border-radius: 8px;
+  width: 600px;
+  position: fixed;
+  margin-left: 10%;
+  margin-top: 80px;
+  font-family: "Courier New", Courier, monospace;
+  z-index: 10;
+}
+
+.card-descrip {
+  margin-left: 50px;
+  width: 400px;
+  height: 70px;
+  overflow-y: hidden scroll;
+}
+
+.produto-detalhado h2 {
+  padding: 8px;
+}
+
+.produto-detalhado img {
+  margin-left: 50px;
+}
+
+.produto-detalhado button {
+  position: relative;
+  left: 425px;
+  top: -220px;
+  width: 150px;
+  height: 50px;
+  font-size: 30px;
+}
+
+.produto-valor {
+  position: relative;
+  left: 453px;
+  top: -220px;
+}
+
+.card-body p,
+.card-body h5 {
+  margin-top: -5px;
+}
+
+.card-title {
+  width: 160px;
+  height: 70px;
+}
+
+.card-text-price {
+  color: red;
+  font-size: 18px;
+  position: relative;
+  margin-left: 145px;
+  top: -60px;
+  margin-bottom: 0px;
+  z-index: 1;
+}
+
+/* Barra de busca */
+.search {
+  position: fixed;
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  z-index: 15;
+}
+
+/* Responsividade da barra de busca */
+@media (max-width: 1250px) {
+  .search {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search {
+    left: 20px;
+    height: 30px;
+  }
+  .produto-detalhado {
+    margin-left: -5px;
+    margin-top: 140px;
+    width: 400px;
+    height: 680px;
+  }
+  .produto-detalhado .card-descrip {
+    width: 320px;
+    font-size: 20px;
+  }
+  .produto-valor {
+    position: relative;
+    margin-left: -360px;
+    margin-top: 230px;
+    font-size: 40px;
+    z-index: 20;
+  }
+  .add-cart {
+    position: relative;
+    margin-left: -300px;
+    margin-top: -50px;
+    border-radius: 8px;
+    border: none;
+  }
 }

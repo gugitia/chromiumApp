@@ -1,32 +1,37 @@
-.navbar-container {
-  background-color: rgba(138, 15, 87, 0.7);
-  width: 500px;
-  height: 500px;
-  margin: -8px;
-  margin-top: -16px;
+.navbar-list {
+  background-color: rgba(165, 11, 11, 0.7);
+  margin-left: -20px;
+  width: 400px;
+  height: 710px;
 }
 .navbar-list ul {
   list-style: none;
   margin-top: 16px;
-  padding-top: 20px;
+  padding-top: 150px;
 }
 
 .navbar-list li {
+  padding: 8px;
   text-align: right;
   font-size: 40px;
   margin-top: 20px;
   margin-bottom: 40px;
-  border-bottom: solid black 2px;
   color: aliceblue;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .navbar-list li:hover {
-  background-color: rgb(97, 1, 57);
+  background-color: rgb(97, 1, 1);
   border-radius: 8px;
   padding: 20px;
 }
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .navbar-list {
+    width: 300px;
+  }
 }
