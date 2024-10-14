@@ -25,7 +25,6 @@ export default function LoginUser() {
   }
   return (
     <div className="login-user-container">
-      <Tapbar />
       <div className="login-user-forms">
         <form className="login-user" onSubmit={handleLogin}>
           <h2>Login User</h2>
