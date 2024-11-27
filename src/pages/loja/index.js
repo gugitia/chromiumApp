@@ -68,6 +68,7 @@ export default function Loja() {
             alt={produtoSelecionado.produto}
             style={{ width: "300px", height: "300px" }}
           />
+          <p>Tags: {produtoSelecionado.tags.join(", ")}</p>
           <p className="card-descrip">
             Descrição: {produtoSelecionado.descricao}
           </p>
@@ -100,18 +101,22 @@ export default function Loja() {
                     />
                     <div className="card-body">
                       <h5 className="card-title">{produto.produto}</h5>
-                      <p className="card-text-price">
-                        {produto.valor.toLocaleString("pt-br", {
-                          style: "currency",
-                          currency: "BRL",
-                        })}
-                      </p>
-                      <button
-                        className="cart-card"
-                        onClick={() => adicionarAoCarrinho(produto)}
-                      >
-                        <FiShoppingCart />
-                      </button>
+                      <p>{produto.tags.join(", ")}</p>
+                      <div className="card-price">
+                        <p className="card-text-price">
+                          {produto.valor.toLocaleString("pt-br", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </p>
+
+                        <button
+                          className="cart-card"
+                          onClick={() => adicionarAoCarrinho(produto)}
+                        >
+                          <FiShoppingCart />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
