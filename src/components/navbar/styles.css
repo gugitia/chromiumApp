@@ -3,6 +3,7 @@
   margin-left: -20px;
   width: 400px;
   height: 710px;
+  overflow: hidden;
 }
 .navbar-list ul {
   list-style: none;

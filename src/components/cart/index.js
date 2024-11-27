@@ -1,5 +1,6 @@
 import "./styles.css";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext"; // Ajuste o caminho conforme necessário
 
 const Cart = () => {
@@ -39,7 +40,9 @@ const Cart = () => {
               currency: "BRL",
             })}
           </p>
-          <button className="shop-button">Comprar</button>
+          <button className="shop-button">
+            <Link to="/comprar">Comprar</Link>
+          </button>
           <button className="clear-button" onClick={limparCarrinho}>
             Limpar Carrinho
           </button>

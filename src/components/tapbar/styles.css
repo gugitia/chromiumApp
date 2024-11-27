@@ -1,11 +1,11 @@
 .tapbar-container {
   width: 1296px;
-  height: 120px;
+  height: 100px;
   background-color: brown;
   margin: -8px;
   margin-top: -20px;
   position: fixed;
-  z-index: 10;
+  z-index: 25;
 }
 
 @media (max-width: 1250px) {
@@ -14,7 +14,7 @@
   }
 }
 
-h3 {
+.tapbar-container h3 {
   position: absolute;
   top: 15px;
   left: 160px;
@@ -22,7 +22,7 @@ h3 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: aliceblue;
-  z-index: 20;
+  z-index: 30;
 }
 
 .tapbar-buttons {

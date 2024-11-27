@@ -54,7 +54,10 @@
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
+.card-price {
+  padding-left: 95px;
+  margin-top: -20px;
+}
 .cart-card {
   z-index: 1;
   background-color: rgb(252, 37, 37);

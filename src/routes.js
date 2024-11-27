@@ -7,8 +7,10 @@ import Register from "./pages/register-user";
 import LogonStaff from "./pages/login-staff";
 import StaffManager from "./pages/staff-manager";
 import Store from "./pages/loja";
+import Comprar from "./pages/comprar";
+import MontarKit from "./pages/montarKit";
 
-const Rotas = () => {
+const Rotas = ({ setIsCartVisible }) => {
   return (
     <Routes>
       <Route path="/" element={<Menu />} />
@@ -17,6 +19,11 @@ const Rotas = () => {
       <Route path="/staff-login" element={<LogonStaff />} />
       <Route path="/adm" element={<StaffManager />} />
       <Route path="/loja" element={<Store />} />
+      <Route path="/montar-kit" element={<MontarKit />} />
+      <Route
+        path="/comprar"
+        element={<Comprar setIsCartVisible={setIsCartVisible} />}
+      />
     </Routes>
   );
 };

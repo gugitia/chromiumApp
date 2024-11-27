@@ -6,9 +6,13 @@ import Cart from "../cart";
 import { FiHeart, FiShoppingCart, FiUser } from "react-icons/fi";
 
 export default function Tapbar() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [isCartVisible, setIsCartVisible] = useState(false);
   const { quantidadeTotal } = useCart();
+
+  useEffect(() => {
+    setUser(localStorage.getItem("usuario"));
+  }, []);
 
   const toggleCart = () => {
     setIsCartVisible(!isCartVisible);
@@ -32,7 +36,7 @@ export default function Tapbar() {
         <Link to="/login">
           <button className="login">
             <FiUser />
-            {user && <p className="tapbar-profile">{user}</p>}
+            <p className="tapbar-profile">{localStorage.getItem("usuario")}</p>
           </button>
         </Link>
         {isCartVisible && (

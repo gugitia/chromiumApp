@@ -18,8 +18,6 @@ export const CartProvider = ({ children }) => {
     setItems((prevItems) => {
       // Encontra o índice do primeiro item correspondente
       const index = prevItems.findIndex((item) => item._id === produto._id);
-
-      // Se o produto for encontrado, cria uma nova lista sem aquele item específico
       if (index !== -1) {
         const updatedItems = [...prevItems];
         updatedItems.splice(index, 1); // Remove o item pelo índice encontrado
