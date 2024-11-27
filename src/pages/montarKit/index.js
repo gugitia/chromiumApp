@@ -9,12 +9,20 @@ const Questionario = () => {
   const [respostas, setRespostas] = useState([]);
   const [pedido, setPedido] = useState([]); // Respostas por etapa
   const [produtos, setProdutos] = useState([]); // Produtos obtidos da API
-  const { items, adicionarAoCarrinho, removerDoCarrinho, limparCarrinho } =
-    useCart();
+  const { adicionarAoCarrinho, limparCarrinho } = useCart();
 
   const etapas = 7; // Número total de etapas
   const alturaInicial = 800; // Altura inicial do quadro
   const incrementoAltura = 100; // Altura adicional por etapa
+
+  const imagensEtapas = [
+    "https://via.placeholder.com/150/0000FF", // Imagem para etapa 1
+    "https://via.placeholder.com/150/FF0000", // Imagem para etapa 2
+    "https://via.placeholder.com/150/00FF00", // Imagem para etapa 3
+    "https://via.placeholder.com/150/FFFF00", // Imagem para etapa 4
+    "https://via.placeholder.com/150/FF00FF", // Imagem para etapa 5
+    "https://via.placeholder.com/150/00FFFF", // Imagem para etapa 6
+  ];
 
   useEffect(() => {
     const fetchProdutos = async () => {
@@ -33,44 +41,24 @@ const Questionario = () => {
     fetchProdutos(); // Carrega os produtos ao iniciar
   }, []);
 
-  // Função para adicionar ou remover um produto na resposta da etapa
   const adicionarResposta = (produto) => {
-    // Atualiza as respostas para a etapa atual
     const novasRespostas = [...respostas];
     if (!novasRespostas[etapaAtual]) {
       novasRespostas[etapaAtual] = [];
     }
-    // Verifica se o produto já foi selecionado
+
     const produtoIndex = novasRespostas[etapaAtual].findIndex(
       (item) => item._id === produto._id
     );
+
     if (produtoIndex === -1) {
-      novasRespostas[etapaAtual].push({ ...produto, quantidade: 1 }); // Se não, adiciona
+      novasRespostas[etapaAtual].push({ ...produto, quantidade: 1 });
     } else {
-      // Caso já esteja selecionado, só incrementa a quantidade
       novasRespostas[etapaAtual][produtoIndex].quantidade += 1;
     }
 
     adicionarAoCarrinho(produto);
-    setRespostas(novasRespostas); // Atualiza as respostas
-
-    // Atualiza o estado do pedido com os novos dados
-    const novoPedido = [...pedido];
-    const pedidoIndex = novoPedido.findIndex(
-      (item) => item._id === produto._id
-    );
-
-    if (pedidoIndex === -1) {
-      // Se o produto ainda não está no pedido, adiciona
-      novoPedido.push({ ...produto, quantidade: 1 });
-    } else {
-      // Caso já esteja no pedido, incrementa a quantidade
-      novoPedido[pedidoIndex].quantidade += 1;
-    }
-
-    setPedido(novoPedido); // Atualiza o estado do pedido
-
-    console.log("Pedido atualizado:", novoPedido);
+    setRespostas(novasRespostas);
   };
 
   const proximaEtapa = () => {
@@ -87,22 +75,7 @@ const Questionario = () => {
     );
     limparCarrinho();
   };
-  const corDeFundo = (etapaAtual) => {
-    switch (etapaAtual) {
-      case 1:
-        return "lightblue"; // Primeira etapa
-      case 2:
-        return "lightgreen"; // Segunda etapa
-      case 3:
-        return "lightyellow"; // Terceira etapa
-      case 4:
-        return "lightcoral"; // Quarta etapa
-      case 5:
-        return "lightcoral"; // Quinta etapa
-      default:
-        return "white";
-    }
-  };
+
   const etapaTitle = (etapaAtual) => {
     switch (etapaAtual) {
       case 1:
@@ -119,6 +92,7 @@ const Questionario = () => {
         return "fim";
     }
   };
+
   return (
     <div
       className="quadro"
@@ -127,17 +101,24 @@ const Questionario = () => {
       }}
     >
       <div className="conteudo">
-        <div
-          className="respostas-selecionadas"
-          style={{ backgroundColor: corDeFundo(etapaAtual) }}
-        >
+        <div className="respostas-selecionadas">
           {respostas.map((resposta, etapaIndex) => (
             <div key={etapaIndex} className="resumo-etapa">
               <h4>Etapa {etapaIndex + 1}</h4>
+              <img
+                src={imagensEtapas[etapaIndex]}
+                alt={`Imagem da Etapa ${etapaIndex + 1}`}
+                className="imagem-etapa"
+              />
               <ul>
                 {resposta.map((produto, index) => (
                   <li key={index} className="item-resposta">
-                    {produto.produto} Valor: {produto.valor}
+                    <img
+                      src={produto.imagems}
+                      alt={"imagem do produto"}
+                      className="imagem-produto-selecionado"
+                    ></img>
+                    - Valor: R${produto.valor}
                   </li>
                 ))}
               </ul>
@@ -161,7 +142,6 @@ const Questionario = () => {
                   />
                   <h4>{produto.produto}</h4>
                   <p>Valor: R${produto.valor}</p>
-
                   <button
                     onClick={() => adicionarResposta(produto)}
                     className="botao"
@@ -171,9 +151,6 @@ const Questionario = () => {
                 </div>
               ))}
             </div>
-            {/* <button onClick={proximaEtapa} className="botao-proximo">
-              Próxima Etapa
-            </button> */}
           </>
         ) : (
           <div>
@@ -181,6 +158,11 @@ const Questionario = () => {
             {respostas.map((resposta, etapaIndex) => (
               <div key={etapaIndex} className="resumo-final">
                 <h4>Etapa {etapaIndex + 1}</h4>
+                <img
+                  src={imagensEtapas[etapaIndex]}
+                  alt={`Imagem da Etapa ${etapaIndex + 1}`}
+                  className="imagem-etapa"
+                />
                 <ul>
                   {resposta.map((produto, index) => (
                     <li key={index}>

@@ -120,3 +120,15 @@ h4 {
 .conteudo {
   margin: 10px;
 }
+
+.imagem-etapa {
+  position: relative;
+  margin-left: 150px;
+  height: 100px;
+  width: 200px;
+}
+
+.imagem-produto-selecionado {
+  height: 100px;
+  width: 100px;
+}
