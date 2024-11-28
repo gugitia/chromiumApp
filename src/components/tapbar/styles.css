@@ -1,109 +1,116 @@
+/* Estilo base para a barra */
 .tapbar-container {
-  width: 1296px;
-  height: 100px;
+  width: 100%;
+  height: 120px;
   background-color: brown;
-  margin: -8px;
-  margin-top: -20px;
+  margin: 0;
+  margin-left: -8px;
+  padding: 0;
   position: fixed;
   z-index: 25;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 1250px) {
   .tapbar-container {
-    height: 180px;
-  }
-}
-
-.tapbar-container h3 {
-  position: absolute;
-  top: 15px;
-  left: 160px;
-  font-size: 32px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: aliceblue;
-  z-index: 30;
-}
-
-.tapbar-buttons {
-  float: right;
-  margin-right: 5vw;
-  margin-top: 30px;
-  position: relative;
-}
-
-@media (max-width: 1250px) {
-  .tapbar-buttons {
-    float: none; /* Centraliza o conteúdo em telas menores */
-    margin-right: 0;
-    top: 10px;
-    text-align: center; /* Centraliza o texto */
-  }
-}
-@media (max-width: 800px) {
-  .tapbar-container h3 {
-    float: left;
-  }
-  .tapbar-buttons {
-    top: 5px;
-    right: 150px;
+    height: 120px;
     padding: 10px;
-    width: 100%; /* Faz o conteúdo ocupar toda a largura */
-    text-align: center; /* Centraliza o texto */
+  }
+  .logo-image {
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .tapbar-container {
+    padding: 15px;
+  }
+  .tapbar-container h3 {
+    font-size: 24px;
+    margin: 0 auto 10px;
+    text-align: center;
   }
 }
 
 @media (max-width: 650px) {
-  .tapbar-container h3 {
-    margin-left: -150px;
+  .tapbar-container {
   }
   .tapbar-buttons {
-    left: -370px;
-  }
-  .tapbar-container {
-    height: 150px;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
   }
 }
+
+@media (max-width: 450px) {
+  .logo-image {
+    width: 160px !important;
+    height: 150px !important;
+  }
+}
+
+/* Estilo para o título */
+.tapbar-container h3 {
+  font-size: 32px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: aliceblue;
+  margin: 0;
+}
+
+/* Botões e entradas */
+.tapbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 200px;
+}
+
 .tapbar-buttons button {
-  margin-left: 20px;
-  height: 60px;
-  width: 60px;
-  border-radius: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
   border: none;
-  font-size: 30px;
+  font-size: 20px;
+  cursor: pointer;
 }
+
 .tapbar-buttons button:hover {
   background-color: rgb(247, 181, 177);
 }
 
 .tapbar-buttons input {
-  margin-right: 100px;
-  width: 300px;
-  height: 30px;
+  width: 250px;
+  height: 35px;
   border-radius: 10px;
   border: none;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
+/* Estilo para busca */
 .search {
-  position: absolute;
-  right: 300px;
-  top: 40px;
+  position: relative;
+  margin-left: auto;
 }
 
+/* Ícones e imagens */
 .favoritos,
 .carrinho,
 .perfil {
-  size: 16px;
-}
-
-.tapbar-profile {
-  position: absolute;
-  right: 93px;
-  top: 73px;
   font-size: 16px;
-  color: aliceblue;
 }
 
-.carrinho {
-  position: relative;
+.logo-image {
+  margin-top: 30px;
+  height: 170px;
+  width: auto;
 }

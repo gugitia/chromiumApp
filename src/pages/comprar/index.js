@@ -69,7 +69,7 @@ export default function ConfirmacaoCompra({ setIsCartVisible, history }) {
           <thead>
             <tr>
               <th>Produto</th>
-              <th>Quantidade</th>
+              <th>Qtd</th>
               <th>Preço</th>
               <th>Total</th>
               <th>Remover</th>
