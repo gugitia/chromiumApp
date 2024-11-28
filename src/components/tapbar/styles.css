@@ -16,6 +16,13 @@
   box-sizing: border-box;
 }
 
+.logo-image {
+  margin-top: 30px;
+  height: 170px;
+  width: auto;
+  margin-left: 400px;
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 1250px) {
   .tapbar-container {
@@ -25,6 +32,7 @@
   .logo-image {
     height: 150px;
     width: auto;
+    margin-left: 200px;
   }
 }
 
@@ -47,6 +55,9 @@
     padding: 10px;
     align-items: center;
     justify-content: center;
+  }
+  .logo-image {
+    margin-left: 0;
   }
 }
 
@@ -107,10 +118,4 @@
 .carrinho,
 .perfil {
   font-size: 16px;
-}
-
-.logo-image {
-  margin-top: 30px;
-  height: 170px;
-  width: auto;
 }

@@ -172,11 +172,17 @@
   font-size: 20px;
   z-index: 15;
 }
-
+.commet {
+  margin-top: 300px;
+  text-align: center;
+}
 /* Responsividade da barra de busca */
 @media (max-width: 1250px) {
   .search {
     margin-top: 60px;
+  }
+  .grid-container {
+    margin-left: -10px;
   }
 }
 

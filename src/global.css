@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "ZeldaLike";
+  src: url("/public/fonts/TheWildBreathOfZelda-15Lv.ttf") format("truetype");
+  font-weight: normal; /* ou bold, se for uma fonte específica */
+  font-style: normal; /* ou italic, se aplicável */
+}

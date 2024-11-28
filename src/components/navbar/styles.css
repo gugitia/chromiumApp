@@ -1,5 +1,5 @@
 .navbar-list {
-  background-color: rgba(165, 11, 11, 0.7);
+  background-color: rgba(255, 4, 4, 0.781);
   margin-left: -20px;
   width: 400px;
   height: 710px;
@@ -7,18 +7,19 @@
 }
 .navbar-list ul {
   list-style: none;
-  margin-top: 16px;
+  margin-top: -50px;
   padding-top: 150px;
 }
 
 .navbar-list li {
   padding: 8px;
   text-align: right;
-  font-size: 40px;
+  font-size: 45px;
+  font-family: "ZeldaLike", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
   margin-top: 20px;
   margin-bottom: 40px;
   color: aliceblue;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .navbar-list li:hover {
