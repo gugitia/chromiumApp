@@ -22,7 +22,7 @@ export default function Tapbar() {
     <div className="tapbar-container">
       <Link to="/">
         <img
-          src="/images/drake4.png"
+          src="/images/drake4 (1).png"
           alt="logo-chromium"
           className="logo-image"
         />
