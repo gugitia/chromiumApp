@@ -11,11 +11,11 @@ export default function Navbar() {
             <li>Loja</li>
           </Link>
           <Link to="montar-kit">
-            <li>Monte seu Kit !</li>
+            <li>Monte sua Campanha</li>
           </Link>
 
-          <li>Miniaturas Personalizados</li>
-          <li>Nossos Kits</li>
+          <li>Pack Personalizado</li>
+          <li>Gacha</li>
           <li>Sobre Nós</li>
         </ul>
       </section>

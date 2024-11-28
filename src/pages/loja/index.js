@@ -123,7 +123,9 @@ export default function Loja() {
               ))}
             </div>
           ) : (
-            <Commet color="#fd0f0f" size="medium" text="" textColor="" />
+            <div className="commet">
+              <Commet color="#fd0f0f" size="medium" text="" textColor="" />
+            </div>
           )}
         </div>
       </div>

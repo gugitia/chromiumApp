@@ -8,7 +8,7 @@ import "../../global.css";
 
 export default function Logon() {
   return (
-    <div className="logon-container">
+    <div className="menu-container">
       <Navbar />
     </div>
   );
