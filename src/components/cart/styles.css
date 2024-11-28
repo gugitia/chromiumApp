@@ -1,8 +1,8 @@
 .cart-container {
   background-color: brown;
   color: aliceblue;
-  margin-left: -130px;
-  margin-top: 4px;
+  margin-left: -430px;
+  margin-top: 50px;
   width: 400px;
   height: 500px;
   border-radius: 8px;
@@ -51,12 +51,12 @@
 
 @media (max-width: 1250px) {
   .cart-container {
-    margin-left: 450px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .cart-container {
-    margin-left: 350px;
+    margin-top: 55px;
+    margin-left: -365px;
   }
 }

@@ -21,7 +21,11 @@ export default function Tapbar() {
   return (
     <div className="tapbar-container">
       <Link to="/">
-        <h3>Chromium</h3>
+        <img
+          src="/images/drake4.png"
+          alt="logo-chromium"
+          className="logo-image"
+        />
       </Link>
       <div className="tapbar-buttons">
         <button className="favoritos">
@@ -36,7 +40,7 @@ export default function Tapbar() {
         <Link to="/login">
           <button className="login">
             <FiUser />
-            <p className="tapbar-profile">{localStorage.getItem("usuario")}</p>
+            {/*} <p className="tapbar-profile">{localStorage.getItem("usuario")}</p> */}
           </button>
         </Link>
         {isCartVisible && (
