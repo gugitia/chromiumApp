@@ -1,0 +1,9 @@
+.gacha-conteudo {
+  margin-top: -70px;
+}
+
+@media (max-width: 600px) {
+  .gacha-conteudo {
+    margin-top: -40px;
+  }
+}

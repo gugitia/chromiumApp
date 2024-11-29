@@ -31,7 +31,8 @@ export default function OrderStaff() {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Comprador</th>
+                <th>ID Comprador</th>
+                <th>Cpf Comprador</th>
                 <th>Local</th>
                 <th>Valor</th>
                 <th>Data de Criação</th>
@@ -43,7 +44,8 @@ export default function OrderStaff() {
                 <tr key={ordem._id}>
                   <td>{ordem._id}</td>
                   <td>{ordem.usuarioId}</td>
-                  <td>{ordem.local}</td>
+                  <td>{ordem.cpf}</td>
+                  <td>{ordem.endereco.rua}</td>
                   <td>R$ {parseFloat(ordem.valor).toFixed(2)}</td>
                   <td>{new Date(ordem.dataCompra).toLocaleDateString()}</td>
                   <td>

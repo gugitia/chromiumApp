@@ -35,5 +35,6 @@ a {
 @media (max-width: 600px) {
   .navbar-list {
     width: 300px;
+    height: 100%;
   }
 }
