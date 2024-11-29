@@ -6,6 +6,8 @@ import "./styles.css";
 
 export default function ConfirmacaoCompra({ setIsCartVisible, history }) {
   // Estados para informações de entrega e pagamento
+  const [cpf, setCpf] = useState("");
+  const [cell, setCell] = useState("");
   const [endereco, setEndereco] = useState({
     rua: "",
     numero: "",
@@ -34,18 +36,25 @@ export default function ConfirmacaoCompra({ setIsCartVisible, history }) {
 
   const handleFinalizarCompra = async () => {
     const produtosId = items.map((item) => item._id).join(",");
+    const userId = localStorage.getItem("usuario");
     const valorTotal = items
       .reduce((acc, item) => acc + item.valor, 0)
       .toFixed(2);
 
     try {
+      if (!userId) {
+        alert("Usuário não encontrado! Faça login para continuar.");
+        return;
+      }
       const response = await api.post("/ordem", {
         produtosId,
-        usuarioId: 123,
+        usuarioId: userId,
+        cpf: cpf,
+        cell: cell,
         valor: valorTotal,
         entregue: 0,
-        endereco, // Adicionando as informações de endereço
-        pagamento, // Adicionando as informações de pagamento
+        endereco,
+        pagamento,
       });
 
       if (response.status === 201) {
@@ -107,6 +116,24 @@ export default function ConfirmacaoCompra({ setIsCartVisible, history }) {
       {items.length > 0 && (
         <div>
           <div>
+            <label>
+              CPF:
+              <input
+                type="text"
+                value={cpf}
+                onChange={(e) => setCpf(e.target.value)}
+                placeholder="Digite o CPF"
+              />
+            </label>
+            <label>
+              Numero de contato:
+              <input
+                type="text"
+                value={cell}
+                onChange={(e) => setCell(e.target.value)}
+                placeholder="Digite o celular"
+              />
+            </label>
             <label>
               Rua:
               <input

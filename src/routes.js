@@ -9,6 +9,7 @@ import StaffManager from "./pages/staff-manager";
 import Store from "./pages/loja";
 import Comprar from "./pages/comprar";
 import MontarKit from "./pages/montarKit";
+import Gacha from "./pages/gacha";
 
 const Rotas = ({ setIsCartVisible }) => {
   return (
@@ -20,6 +21,7 @@ const Rotas = ({ setIsCartVisible }) => {
       <Route path="/adm" element={<StaffManager />} />
       <Route path="/loja" element={<Store />} />
       <Route path="/montar-kit" element={<MontarKit />} />
+      <Route path="/gacha" element={<Gacha />} />
       <Route
         path="/comprar"
         element={<Comprar setIsCartVisible={setIsCartVisible} />}

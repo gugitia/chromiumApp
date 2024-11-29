@@ -8,6 +8,8 @@ const AddProduct = ({ onAdd, onCancel }) => {
     descricao: "",
     valor: "",
     imagems: "",
+    tipo: "",
+    conteudo: "",
   });
 
   const [isSaving, setIsSaving] = useState(false); // Indica se está salvando
@@ -16,7 +18,17 @@ const AddProduct = ({ onAdd, onCancel }) => {
   // Atualiza os valores no estado local conforme o usuário edita
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setFormValues((prevValues) => {
+      const updatedValues = { ...prevValues, [name]: value };
+
+      if (name === "tipo" && value === "especial") {
+        updatedValues.tags = "gacha";
+      } else if (name === "tipo") {
+        updatedValues.tags = "";
+      }
+
+      return updatedValues;
+    });
   };
 
   // Adiciona o novo produto via API
@@ -103,6 +115,44 @@ const AddProduct = ({ onAdd, onCancel }) => {
             style={{ width: "100%", marginBottom: "10px" }}
           />
         </label>
+        <label>
+          Tipo:
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="tipo"
+                value="normal"
+                checked={formValues.tipo === "normal"}
+                onChange={handleChange}
+              />
+              Normal
+            </label>
+            <label style={{ marginLeft: "20px" }}>
+              <input
+                type="radio"
+                name="tipo"
+                value="especial"
+                checked={formValues.tipo === "especial"}
+                onChange={handleChange}
+              />
+              Especial
+            </label>
+          </div>
+        </label>
+        {formValues.tipo === "especial" && (
+          <label>
+            Conteudo:
+            <input
+              type="text"
+              name="conteudo"
+              value={formValues.conteudo}
+              onChange={handleChange}
+              placeholder="Insira o conteudo"
+              style={{ width: "100%", marginBottom: "10px" }}
+            />
+          </label>
+        )}
         <div
           style={{
             display: "flex",

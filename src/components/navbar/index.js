@@ -13,9 +13,10 @@ export default function Navbar() {
           <Link to="montar-kit">
             <li>Monte sua Campanha</li>
           </Link>
-
-          <li>Pack Personalizado</li>
-          <li>Gacha</li>
+          <Link to="/gacha">
+            <li>Gacha</li>
+          </Link>
+          <li>Pack Personalizado coming soon</li>
           <li>Sobre Nós</li>
         </ul>
       </section>
