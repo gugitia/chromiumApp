@@ -187,6 +187,11 @@
     margin-top: 60px;
     margin-left: -100px;
   }
+  .search-container {
+    border: solid black 3px;
+
+    width: 100%;
+  }
   .grid-container {
     margin-left: -10px;
   }

@@ -42,10 +42,6 @@ export default function ConfirmacaoCompra({ setIsCartVisible, history }) {
       .toFixed(2);
 
     try {
-      if (!userId) {
-        alert("Usuário não encontrado! Faça login para continuar.");
-        return;
-      }
       const response = await api.post("/ordem", {
         produtosId,
         usuarioId: userId,

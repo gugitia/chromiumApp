@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "./styles.css";
@@ -9,9 +9,25 @@ export default function Tapbar() {
   const [user, setUser] = useState("");
   const [isCartVisible, setIsCartVisible] = useState(false);
   const { quantidadeTotal } = useCart();
+  const cartRef = useRef(null);
 
   useEffect(() => {
     setUser(localStorage.getItem("usuario"));
+  }, []);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsCartVisible(false);
+      }
+    };
+
+    // Adiciona o event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Remove o event listener ao desmontar
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const toggleCart = () => {
@@ -44,7 +60,7 @@ export default function Tapbar() {
           </button>
         </Link>
         {isCartVisible && (
-          <div className="cart-modal">
+          <div ref={cartRef} className="cart-modal">
             <Cart onClose={toggleCart} />
           </div>
         )}

@@ -11,20 +11,49 @@ import Comprar from "./pages/comprar";
 import MontarKit from "./pages/montarKit";
 import Gacha from "./pages/gacha";
 
+import ProtectedRoute from "./protectedRoutes";
+
+const isUserAuthenticated = () => {
+  const user = localStorage.getItem("usuario");
+  return user;
+};
+
+const isEmployeeAuthenticated = () => {
+  const employeeToken = localStorage.getItem("funcionario");
+  return employeeToken;
+};
+
 const Rotas = ({ setIsCartVisible }) => {
   return (
     <Routes>
       <Route path="/" element={<Menu />} />
       <Route path="/login" element={<Logon />} />
-      <Route path="/registro" element={<Register />} />
       <Route path="/staff-login" element={<LogonStaff />} />
-      <Route path="/adm" element={<StaffManager />} />
+      <Route path="/registro" element={<Register />} />
       <Route path="/loja" element={<Store />} />
       <Route path="/montar-kit" element={<MontarKit />} />
       <Route path="/gacha" element={<Gacha />} />
       <Route
         path="/comprar"
-        element={<Comprar setIsCartVisible={setIsCartVisible} />}
+        element={
+          <ProtectedRoute
+            isAuthorized={isUserAuthenticated}
+            redirectTo="/login"
+          >
+            <Comprar />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/adm"
+        element={
+          <ProtectedRoute
+            isAuthorized={isEmployeeAuthenticated}
+            redirectTo="/staff-login"
+          >
+            <StaffManager />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
