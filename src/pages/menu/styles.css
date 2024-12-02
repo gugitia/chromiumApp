@@ -1,3 +1,10 @@
 .menu-container {
   font-family: "ZeldaLike", sans-serif;
+  margin-top: 60px;
+}
+
+@media (max-width: 1250px) {
+  .menu-container {
+    margin-top: 50px;
+  }
 }

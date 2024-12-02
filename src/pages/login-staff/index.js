@@ -13,7 +13,7 @@ export default function LoginStaff() {
     e.preventDefault();
     try {
       const response = await api.post("/login/staff", { email, senha });
-      localStorage.setItem("email", email);
+      localStorage.setItem("funcionario", email);
       console.log(response);
       alert("login feito com sucesso");
       navigate("/adm");
