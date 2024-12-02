@@ -32,6 +32,51 @@
 .manager-component {
   margin: 0 auto;
   width: 800px;
-
   text-align: center;
+}
+
+@media (max-width: 1250px) {
+  .manager-menu button {
+    width: 200px;
+    margin-left: 50px;
+  }
+  .manager-menu ul {
+    margin-left: 0px;
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .manager-menu ul {
+    margin-left: -50px;
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 850px) {
+  .manager-menu ul {
+    /* flex-direction: column; */
+    margin-left: -50px;
+  }
+  .manager-menu button {
+    width: 150px;
+    margin-left: 30px;
+  }
+  .manager-menu li {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .manager-menu ul {
+  }
+  .manager-menu li {
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+  .manager-menu button {
+    margin-top: 10px;
+    width: 100px;
+  }
 }

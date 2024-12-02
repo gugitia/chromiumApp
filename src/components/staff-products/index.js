@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import api from "../../services/api";
-import { FiEdit, FiTrash2 } from "react-icons/fi";
+import { FiEdit, FiTrash2, FiUpload } from "react-icons/fi";
 import EditProduct from "../edit-products";
 import AddProduct from "../add-products";
 
@@ -102,7 +102,12 @@ export default function ProductsStaff() {
 
       {produtos ? (
         <table className="staff-table">
-          <button onClick={() => handleAddingClick()}>+</button>
+          <button
+            className="add-product-button"
+            onClick={() => handleAddingClick()}
+          >
+            <FiUpload />
+          </button>
           <thead>
             <tr>
               <th>ID</th>
